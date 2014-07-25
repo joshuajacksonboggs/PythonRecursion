@@ -1,4 +1,4 @@
 PythonRecursion
 ===============
 
-My practice and solutions for The Hidden Genius Project coding questions.
+Solutions for [The Hidden Genius Project](http://www.hiddengeniusproject.org/) coding questions, and personal practice in better learning Python and recursion.
