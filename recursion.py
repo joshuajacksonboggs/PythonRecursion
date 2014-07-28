@@ -30,10 +30,20 @@ def end_x(input_string):
   else:
     return input_string[0] + end_x(input_string[1:])
 
-print("end_x(\"jxxoshxuxax\") --> " + end_x("jxxoshxuxax"))
+print("end_x(\"jxxoshxuxax\") --> " + end_x("jxxoshxuxax") + "\n")
 
 
+def count_pairs(input_string):
+  if len(input_string) < 3:
+    return 0
+  elif input_string[0] == input_string[2]:
+    if len(input_string[1:]) > 2:
+      return 1 + count_pairs(input_string[1:])
+    else:
+      return 1
+  else:
+    return count_pairs(input_string[1:])
 
-
-
-print("\n")
+print("count_pairs(\"axa\") --> " + str(count_pairs("axa")))
+print("count_pairs(\"axax\") --> " + str(count_pairs("axax")))
+print("count_pairs(\"axbx\") --> " + str(count_pairs("axbx")) + "\n")
