@@ -47,3 +47,19 @@ def count_pairs(input_string):
 print("count_pairs(\"axa\") --> " + str(count_pairs("axa")))
 print("count_pairs(\"axax\") --> " + str(count_pairs("axax")))
 print("count_pairs(\"axbx\") --> " + str(count_pairs("axbx")) + "\n")
+
+
+def count_abc(input_string):
+  if len(input_string) < 3:
+    return 0
+  elif input_string[0:3] == "abc" or input_string[0:3] == "aba":
+    if len(input_string[1:]) > 2:
+      return 1 + count_abc(input_string[1:])
+    else:
+      return 1
+  else:
+    return count_abc(input_string[1:])
+
+print("count_abc(\"abc\") --> " + str(count_abc("abc")))
+print("count_abc(\"abcxxabc\") --> " + str(count_abc("abcxxabc")))
+print("count_abc(\"xabcxabaxx\") --> " + str(count_abc("xabcxabaxx")) + "\n")
