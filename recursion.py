@@ -63,3 +63,18 @@ def count_abc(input_string):
 print("count_abc(\"abc\") --> " + str(count_abc("abc")))
 print("count_abc(\"abcxxabc\") --> " + str(count_abc("abcxxabc")))
 print("count_abc(\"xabcxabaxx\") --> " + str(count_abc("xabcxabaxx")) + "\n")
+
+def count_11(input_string):
+  if len(input_string) < 2:
+    return 0
+  elif input_string[0:2] == "11":
+    if len(input_string[2:]) > 1:
+      return 1 + count_11(input_string[2:])
+    else:
+      return 1
+  else:
+    return count_11(input_string[1:])
+
+print("count_11(\"11abc11\") --> " + str(count_11("11abc11")))
+print("count_11(\"abc11x11x11\") --> " + str(count_11("abc11x11x11")))
+print("count_11(\"111\") --> " + str(count_11("111")) + "\n")
