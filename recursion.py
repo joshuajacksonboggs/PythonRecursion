@@ -78,3 +78,15 @@ def count_11(input_string):
 print("count_11(\"11abc11\") --> " + str(count_11("11abc11")))
 print("count_11(\"abc11x11x11\") --> " + str(count_11("abc11x11x11")))
 print("count_11(\"111\") --> " + str(count_11("111")) + "\n")
+
+def string_clean(input_string):
+  if len(input_string) == 1:
+    return input_string[0]
+  elif input_string[0] == input_string[1]:
+    return string_clean(input_string[1:])
+  else:
+    return input_string[0] + string_clean(input_string[1:])
+
+print("string_clean(\"yyzzza\") --> " + string_clean("yyzzza"))
+print("string_clean(\"abbbcdd\") --> " + string_clean("abbbcdd"))
+print("string_clean(\"Hello\") --> " + string_clean("Hello"))
