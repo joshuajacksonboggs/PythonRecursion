@@ -89,4 +89,22 @@ def string_clean(input_string):
 
 print("string_clean(\"yyzzza\") --> " + string_clean("yyzzza"))
 print("string_clean(\"abbbcdd\") --> " + string_clean("abbbcdd"))
-print("string_clean(\"Hello\") --> " + string_clean("Hello"))
+print("string_clean(\"Hello\") --> " + string_clean("Hello") + "\n")
+
+def count_hi2(input_string):
+  if len(input_string) == 1:
+    return 0
+  elif len(input_string) == 2:
+    if input_string == "hi":
+      return 1
+    return 0
+  elif len(input_string) > 2:
+    if "hi" in input_string[0:3]:
+      if input_string[0] == "x":
+        return 0 + count_hi2(input_string[2:])
+      return 1 + count_hi2(input_string[2:])
+    return 0 + count_hi2(input_string[1:])
+
+print("count_hi2(\"ahixhi\") --> " + str(count_hi2("ahixhi")))
+print("count_hi2(\"ahibhi\") --> " + str(count_hi2("ahibhi")))
+print("count_hi2(\"xhixhi\") --> " + str(count_hi2("xhixhi")) + "\n")
